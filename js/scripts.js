@@ -531,7 +531,7 @@ $(".sound-outer").mouseleave(
 
 
 // --------------------End-----------------
-var videoTimeRange = videoGet.skeelable;
+var videoTimeRange = videoGet.seekable;
 
 
 video.on("timeupdate", function(){
