@@ -248,26 +248,26 @@ waitDurationLoad = setInterval(
 
 function loadedProg() {
 
-    var videoTimeRange = videoGet.seekable;
+    var videoTimeRange = videoGet.buffered;
 
     // console.log(videoTimeRange.end(0));
 
-    for(var i=0; i < videoTimeRange.length; i++) {
+    // for(var i=0; i < videoTimeRange.length; i++) {
 
-        if(videoTimeRange.start(i) <= videoGet.currentTime) {
+    //     if(videoTimeRange.start(i) <= videoGet.currentTime) {
 
 
                 // alert("asdfaf");
                 var progFull = $('#video-progress').width();
-                var loadedFraction = videoTimeRange.end(i) / videoDuration;
+                var loadedFraction = videoTimeRange.end(videoTimeRange.length - 1) / videoDuration;
 
                 $(".progress-loaded").width(loadedFraction * progFull);
 
              // console.log(videoTimeRange.end(i));
 
-        }
+    //     }
 
-    }
+    // }
 
 }
 
