@@ -531,4 +531,22 @@ $(".sound-outer").mouseleave(
 
 
 // --------------------End-----------------
+var videoTimeRange = videoGet.skeelable;
 
+
+video.on("timeupdate", function(){
+
+
+
+
+for (var i = 0; i < videoTimeRange.length; i++) {
+
+    var tR = videoTimeRange[i];
+
+    console.log(tR);
+}
+
+
+
+
+});
