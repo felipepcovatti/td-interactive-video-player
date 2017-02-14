@@ -239,6 +239,7 @@ waitDurationLoad = setInterval(
 
             videoDuration = videoGet.duration;
             console.log(videoDuration);
+            loadedProg();
 
             clearInterval(waitDurationLoad);
         } 
