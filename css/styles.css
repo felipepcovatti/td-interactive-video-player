@@ -1,0 +1,251 @@
+body {
+
+/*	background: url("../video_player_v2/mockups/playing.png");*/
+	background-size: cover;
+	width: 100%;
+	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
+
+
+}
+
+button {
+
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: .2s;
+	padding: 0;
+
+	width: 30px;
+	height: 30px;
+}
+
+button:focus {
+	outline: none;
+}
+
+button:not(:last-child) {
+	margin-right: 30px;
+}
+
+button#video-sound {
+	box-sizing: content-box;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-right: 25px;
+}
+
+
+button:first-of-type {
+	margin-left:15px;
+}
+
+ button:last-of-type {
+	margin-right: 15px;
+}
+
+button:hover {
+	filter: brightness(.7);
+}
+
+
+div.video-time {
+	display: inline;
+	color: white;
+	margin-right: auto;
+}
+
+
+.main-video, .transcription, .video-ctrl-bar {
+	margin: 0 auto;
+	display: block;
+	width: 100%;
+}
+
+
+.transcription {
+	padding: 30px;
+	box-sizing: border-box;
+	color: #696969;
+	font-weight: 400;
+/*	transform: translateY(-70px);*/
+	font-size: 1em;
+	line-height: 1.4;
+	position: relative;
+/*	z-index: 500;*/
+	background-color: white;
+
+
+}
+
+.transcription span {
+	color: #E4921D;
+}
+
+.js-godown {
+	transform: translateY(100vh);
+}
+
+.video-ctrl-bar {
+
+	opacity: 0;
+	transition: top .5s, opacity 1s;
+	top:0px;
+	padding: 15px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	flex-wrap: wrap;
+
+/*	transform: translateY(-100%);*/
+
+	background: rgba(0,0,0,0);
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.75)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+
+
+}
+
+
+.video-ctnr {
+
+	margin: auto;
+
+}
+
+.js-video-full {
+	width: 100%;
+	max-width: 100%;
+	margin: auto;
+}
+
+.js-vertical-center {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+/*Progress*/
+
+
+#video-progress {
+	background-color: rgba(125,125,125,.4);
+	height: 3.5px;
+	flex-basis: 100%;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+
+.progress-loaded {
+	background-color: rgba(255,255,255,.25);
+	height: 100%;
+	width: 0;
+	background-color: blue;
+
+
+}
+
+.progress-current {
+	background-color: orange;
+	height: 100%;
+	width: 0;
+}
+
+/*volume*/
+
+
+#video-sound {
+	padding-top: 6px;
+	transform: translateY(-6px);
+/*	background-color: blue;*/
+}
+
+.sound-outer {
+	position: absolute;
+	background-color: white;
+	height: 117px;
+	width: 40px;
+/*	padding-top: 8px;*/
+	cursor: ns-resize;
+	background: rgba(0,0,0,.7);
+	border-radius: 3px;
+
+}
+
+
+
+.sound-level {
+		border-radius: 3px;
+	background-color: rgba(105,105,105,1);
+	width: 20px;
+	height: 100px;
+	position: relative;
+	margin: 0 auto;
+	top:50%;
+	transform: translateY(-50%);
+/*		border-width: 100px 5px 100px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 4px;*/
+/*	transition: opacity .5s;
+	opacity: 0;*/
+
+/*	border-top: 100px solid black;*/
+/*	-webkit-box-shadow: 0px 0px 0px 5px white;
+-moz-box-shadow: 0px 0px 0px 5px white;
+box-shadow: 0px 0px 0px 5px white;
+		
+		border-radius: 3px;
+*/
+
+}
+
+.sound-current {
+	background-color: orange;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+/*	border-top: 100px solid red;*/
+
+}
+
+
+@media (min-width: 768px) {
+	.main-video, .transcription, .video-ctrl-bar {
+
+		width: 85%;
+		max-width: 900px;
+	}
+
+	.transcription {
+		font-size: 1.2em;
+		line-height: 1.5;
+	}
+
+	.js-video-full {
+	width: 100%;
+	max-width: 100%;
+	margin: auto;
+	}
+
+}
