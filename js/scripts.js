@@ -289,7 +289,7 @@ $('#video-progress').mousedown(
         var progFull = $('#video-progress').width();
         var xRelPos = e.pageX - $(this).offset().left;
         var progFraction = xRelPos / progFull;
-
+        $(".progress-current").width(progFraction * progFull);
         videoGet.currentTime = progFraction * videoDuration;
 
     }
