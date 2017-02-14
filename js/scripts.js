@@ -541,7 +541,7 @@ video.on("timeupdate", function(){
 
 for (var i = 0; i < videoTimeRange.length; i++) {
 
-    var tR = videoTimeRange[i];
+    var tR = videoTimeRange.end(i);
 
     console.log(tR);
 }
