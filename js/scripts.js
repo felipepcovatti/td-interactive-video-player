@@ -282,6 +282,21 @@ function currentProg() {
 
 
 
+$('#video-progress').mousedown(
+
+    function(e) {
+
+        var progFull = $('#video-progress').width();
+        var xRelPos = e.pageX - $(this).offset().left;
+        var progFraction = xRelPos / progFull;
+
+        videoGet.currentTime = progFraction * videoDuration;
+
+    }
+
+    );
+
+
 video.on("timeupdate", function(){
 
     loadedProg();
