@@ -404,6 +404,7 @@ video.on('seeking', function() {
 	loadedProg();
 	displayTime();
 	highlightFragment(transcriptionArray);
+
 });
 video.on("waiting", function() {
 	loadedProg();
@@ -420,6 +421,9 @@ video.on("ended", function() {
 	body.css("cursor", "auto");
 	showBar();
 	clearInterval(updateCurrentTime);
+	video.one('timeupdate', function(){
+		playOrPauseBtn.find("img").attr("src", "svgs/play.svg");
+	});
 })
 video.on('timeupdate', function() {
 	currentProgGet();
