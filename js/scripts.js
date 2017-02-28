@@ -421,7 +421,7 @@ video.on("ended", function() {
 	body.css("cursor", "auto");
 	showBar();
 	clearInterval(updateCurrentTime);
-	video.one('timeupdate', function(){
+	video.one('seeking', function(){
 		playOrPauseBtn.find("img").attr("src", "svgs/play.svg");
 	});
 })
