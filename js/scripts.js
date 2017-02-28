@@ -424,11 +424,11 @@ video.on("ended", function() {
 	outerVideoProg.on('click.afterEnd', function(){
 		playOrPauseBtn.find("img").attr("src", "svgs/play.svg");
 		outerVideoProg.off('click.afterEnd');
-		playOrPauseBtn.off('click.afterEnd');
+		playOrPauseBtn.add(video).off('click.afterEnd');
 	});
-	playOrPauseBtn.on('click.afterEnd', function(){
+	playOrPauseBtn.add(video).on('click.afterEnd', function(){
 		outerVideoProg.off('click.afterEnd');
-		playOrPauseBtn.off('click.afterEnd');
+		playOrPauseBtn.add(video).off('click.afterEnd');
 	});
 });
 video.on('timeupdate', function() {
