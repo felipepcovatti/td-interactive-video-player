@@ -421,10 +421,18 @@ video.on("ended", function() {
 	body.css("cursor", "auto");
 	showBar();
 	clearInterval(updateCurrentTime);
-	video.one('seeking', function(){
+	outerVideoProg.on('click.afterEnd', function(){
 		playOrPauseBtn.find("img").attr("src", "svgs/play.svg");
+		outerVideoProg.off('click.afterEnd');
+		playOrPauseBtn.off('click.afterEnd');
+		console.log("afaa");
 	});
-})
+	playOrPauseBtn.on('click.afterEnd', function(){
+		outerVideoProg.off('click.afterEnd');
+		playOrPauseBtn.off('click.afterEnd');
+		console.log("afaa");
+	});
+});
 video.on('timeupdate', function() {
 	currentProgGet();
 	highlightFragment(transcriptionArray);
