@@ -425,12 +425,10 @@ video.on("ended", function() {
 		playOrPauseBtn.find("img").attr("src", "svgs/play.svg");
 		outerVideoProg.off('click.afterEnd');
 		playOrPauseBtn.off('click.afterEnd');
-		console.log("afaa");
 	});
 	playOrPauseBtn.on('click.afterEnd', function(){
 		outerVideoProg.off('click.afterEnd');
 		playOrPauseBtn.off('click.afterEnd');
-		console.log("afaa");
 	});
 });
 video.on('timeupdate', function() {
